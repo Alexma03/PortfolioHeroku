@@ -6,6 +6,49 @@
     <link th:href="@{/css/style.css}" rel="stylesheet">
 </head>
 <body>
+<div class="circulos">
+    <svg class="circulos-circulo1" height="100" width="100">
+        <circle cx="50" cy="50" r="40"/>
+    </svg>
+    <svg class="circulos-circulo2" height="100" width="100">
+        <circle cx="50" cy="50" r="40" transform="translate(100 100)"/>
+    </svg>
+</div>
 
+<header class="header">
+    <div class="header-logo">
+        <h1><a href="#inicio" title="Alex Marcos" class="header__a">Alex Marcos</a></h1>
+    </div>
+    <nav class="header-nav">
+        <ul>
+            <li><a href="#sobre-mi">Sobre mi</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main">
+
+    <div class="inicio" id="inicio">
+        <div class="inicio-text">
+            <h3 class="incio-text-subtitle">Hello there! thanks for visiting my site</h3>
+            <h1 class="inicio-text-title">I'm Alex Marcos</h1>
+            <p class="inicio-text-description">A Full Stack Developer</p>
+            <div>
+                <a href="#contacto" class="inicio-text-button">Contact me</a>
+                <a href="#contacto" class="inicio-text-button">Contact me</a>
+            </div>
+        </div>
+        <div class="inicio-img">
+            <img th:src="@{}" alt="Alex Marcos" class="inicio-img__img">
+        </div>
+    </div>
+
+    <div class="">
+
+    </div>
+</main>
 </body>
 </html>
