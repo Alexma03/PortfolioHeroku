@@ -1,54 +1,134 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Portfolio Alex Marcos</title>
     <link th:href="@{/css/style.css}" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 <div class="circulos">
-    <svg class="circulos-circulo1" height="100" width="100">
-        <circle cx="50" cy="50" r="40"/>
+    <svg class="circulo circulo1" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#F652F8"
+              d="M55.6,-64.9C71.4,-53,83.2,-34.8,86.9,-15.1C90.6,4.6,86.2,25.9,75.9,43.8C65.6,61.8,49.3,76.3,30,84C10.7,91.7,-11.7,92.6,-31.5,85.7C-51.3,78.8,-68.5,64.2,-78,45.9C-87.5,27.7,-89.3,5.8,-85,-14.3C-80.6,-34.4,-70.1,-52.8,-55,-64.9C-39.8,-77,-19.9,-82.8,0,-82.8C19.9,-82.8,39.8,-76.9,55.6,-64.9Z"
+              transform="translate(100 100)"/>
     </svg>
-    <svg class="circulos-circulo2" height="100" width="100">
-        <circle cx="50" cy="50" r="40" transform="translate(100 100)"/>
+    <svg class="circulo circulo2" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#707BFE"
+              d="M55.6,-64.9C71.4,-53,83.2,-34.8,86.9,-15.1C90.6,4.6,86.2,25.9,75.9,43.8C65.6,61.8,49.3,76.3,30,84C10.7,91.7,-11.7,92.6,-31.5,85.7C-51.3,78.8,-68.5,64.2,-78,45.9C-87.5,27.7,-89.3,5.8,-85,-14.3C-80.6,-34.4,-70.1,-52.8,-55,-64.9C-39.8,-77,-19.9,-82.8,0,-82.8C19.9,-82.8,39.8,-76.9,55.6,-64.9Z"
+              transform="translate(100 100)"/>
     </svg>
 </div>
 
-<header class="header">
+<header>
     <div class="header-logo">
-        <h1><a href="#inicio" title="Alex Marcos" class="header__a">Alex Marcos</a></h1>
+        <h1><a href="#inicio" title="Alex Marcos" class="header__a">Alex <span>Marcos</span></a></h1>
     </div>
-    <nav class="header-nav">
-        <ul>
-            <li><a href="#sobre-mi">Sobre mi</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+    <div class="header-nav">
+        <a href="#sobre-mi">Sobre mi</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+    </div>
 </header>
 
 <main class="main">
 
-    <div class="inicio" id="inicio">
+    <section class="inicio" id="inicio" th:each="inicio : ${inicio}">
         <div class="inicio-text">
-            <h3 class="incio-text-subtitle">Hello there! thanks for visiting my site</h3>
-            <h1 class="inicio-text-title">I'm Alex Marcos</h1>
-            <p class="inicio-text-description">A Full Stack Developer</p>
-            <div>
-                <a href="#contacto" class="inicio-text-button">Contact me</a>
-                <a href="#sobre-mi" class="inicio-text-button">Sobre mi</a>
+            <h3 class="inicio-text-subtitle" th:text="${inicio.subtitle}"></h3>
+            <h1 class="inicio-text-title" th:text="${inicio.title}"></h1>
+            <p class="inicio-text-description" th:text="${inicio.description}"></p>
+            <div class="inicio-buttons">
+                <a href="#contacto" class="inicio-button" th:text="${inicio.boton1}"></a>
+                <a href="#sobre-mi" class="inicio-button-border" th:text="${inicio.boton2}"></a>
             </div>
         </div>
         <div class="inicio-img">
-            <img th:src="@{}" alt="Alex Marcos" class="inicio-img__img">
+            <img th:src="${inicio.image}" alt="Alex Marcos">
         </div>
-    </div>
+    </section>
 
-    <div class="">
+    <section class="sobre-mi" id="sobre-mi">
+        <h2 class="sobre-mi-tittle">Sobre Mi</h2>
+        <div class="sobre-mi-container" th:each="aboutme : ${aboutme}">
+            <div class="sobre-mi-img">
+                <img th:src="${aboutme.image}" alt="Alex Marcos">
+            </div>
+            <div class="sobre-mi-text">
+                <p class="sobre-mi-text-descripcion" th:text="${aboutme.description}"></p>
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <section class="habilidades" id="habilidades">
+        <h2 class="habilidades-tittle">Habilidades</h2>
+        <h3 class="habilidades-subtittle">Main</h3>
+        <div class="habilidades-container-main">
+            <div class="habilidades-card" th:each="skillMain : ${skillmain}">
+                <img th:src="${skillMain.image}" alt="Java">
+                <h3 th:text="${skillMain.title}"></h3>
+                <p th:text="${skillMain.imageDescription}"></p>
+            </div>
+        </div>
+            <h2 class="habilidades-subtittle">Secondary</h2>
+        <div class="habilidades-container-secondary">
+            <div class="habilidades-card" th:each="skillsSecondary : ${skillsecondary}">
+                <img th:src="${skillsSecondary.image}" alt="Java">
+                <h3 th:text="${skillsSecondary.title}"></h3>
+                <p th:text="${skillsSecondary.imageDescription}"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="proyectos" id="proyectos">
+        <h2 class="proyectos-tittle">Proyectos</h2>
+        <div class="proyectos-container">
+            <div class="proyectos-card" th:each="project : ${project}">
+                <img th:src="${project.image}" th:alt="${project.title}">
+                <h3 th:text="${project.title}"></h3>
+                <p th:text="${project.description}"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="form-contacto" id="contacto">
+        <h2 class="form-contacto-tittle">Formulario de contacto</h2>
+        <form action="/saveUser" method="post">
+            <label class="form-contacto-input">
+                <input type="text" name="name" placeholder="Nombre" required>
+            </label>
+            <label class="form-contacto-input">
+                <input type="email" name="email" placeholder="Correo electrónico" required>
+            </label>
+            <label class="form-contacto-input">
+                <textarea name="message" placeholder="Mensaje" required></textarea>
+            </label>
+            <label class="form-contacto-input">
+                <button class="form-contacto-btn" type="submit">Enviar</button>
+            </label>
+        </form>
+    </section>
+
+    <footer class="contacto">
+        <h2 class="contacto-tittle">Contactame</h2>
+        <div class="contacto-container">
+            <div class="contacto-card" th:each="contact : ${contact}">
+                <img th:src="${contact.img}" alt="Correo">
+                <h3 th:text="${contact.text}"></h3>
+            </div>
+        </div>
+        <div class="footer-nav">
+            <a href="#inicio">Alex <span>Marcos</span></a>
+            <a href="#sobre-mi">Sobre mi</a>
+            <a href="#habilidades">Habilidades</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </footer>
+
 </main>
 </body>
 </html>

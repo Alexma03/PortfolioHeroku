@@ -1,4 +1,6 @@
 package com.alexma.portfolio.contact;
 
-public interface ContactRepository {
+import org.springframework.data.repository.CrudRepository;
+
+public interface ContactRepository extends CrudRepository<ContactCard, Long> {
 }

@@ -1,0 +1,560 @@
+body {
+    background-color: #0e0b2c;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.circulos {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(120px);
+}
+
+.circulos .circulo {
+    position: absolute;
+    width: 120%;
+    height: 120%;  animation: crecer-encoger 40s infinite;
+
+}
+
+.circulos .circulo1 {
+    top: -60%;
+    right: -60%;
+}
+
+.circulos .circulo2 {
+    bottom: -55%;
+    left: -55%;
+}
+
+.circulos .circulo2 .path {
+}
+
+@keyframes crecer-encoger {
+    0% {
+        transform: scale(0.7);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(0.7);
+    }
+}
+
+
+header {
+    display: flex;
+    width: 90%;
+    justify-content: space-between;
+    background-color: rgba(112, 123, 254, 0.4);
+    padding-left: 80px;
+    padding-right: 80px;
+    margin-top: 30px;
+    margin-bottom: 120px;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.header__a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+}
+
+.header__a span {
+    color: #E514B2;
+}
+
+.header-logo {
+    text-shadow: 0 10px 10px rgba(0, 0, 0, 0.58);
+    transition: transform 0.4s;
+}
+
+.header-logo:hover {
+    transform: translateY(-5px);
+}
+
+.header-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 50%;
+}
+
+.header-nav a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 30px;
+    transition: transform 0.4s;
+}
+
+.header-nav a:hover {
+    transform: translateY(-5px);
+}
+
+
+main {
+    padding: 16px;
+    z-index: 0;
+}
+
+
+.inicio {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.inicio-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 15%;
+}
+
+.inicio-text-subtitle {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.inicio-text-title {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 65px;
+    margin-bottom: -50px;
+}
+
+.inicio-text-description {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 65px;
+    margin-bottom: 20px;
+    color: #E514B2;
+}
+
+.inicio-buttons {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.inicio-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 180px;
+    background-color: #E514B2;
+    border-radius: 20px;
+    margin-right: 50px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+.inicio-button:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.inicio-button-border {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 180px;
+    border: 2px solid #E514B2;
+    border-radius: 20px;
+    margin-right: 50px;
+    text-decoration: none;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.inicio-button-border:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.inicio-img {
+    width: 80%;
+    height: 90%;
+}
+
+.inicio-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    border: #E514B2 8px solid;
+}
+
+.sobre-mi {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.sobre-mi-tittle {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.sobre-mi-container{
+    display: grid;
+    grid-template-columns: 55% 45%;
+}
+
+.sobre-mi-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-right: 50px;
+}
+
+.sobre-mi-img img {
+    width: 80%;
+    height: 70%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    border: #E514B2 8px solid;
+}
+
+.sobre-mi-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.sobre-mi-text-descripcion {
+    font-family: 'Cabin', sans-serif;
+    font-weight: normal;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.habilidades{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.habilidades-tittle {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.habilidades-subtittle{
+    font-family: 'Cabin', sans-serif;
+    font-weight: normal;
+    font-size: 28px;
+    margin: 70px;
+}
+
+.habilidades-container-main {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 40px;
+}
+
+.habilidades-container-secondary {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap: 60px;
+}
+
+.habilidades-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(70, 40, 103, 0.2);
+    height: 100%;
+    width: 250px;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.habilidades-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.habilidades-card h3{
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.habilidades-card p {
+    display: none;
+}
+
+.habilidades-card:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.proyectos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.proyectos-tittle {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.proyectos-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.proyectos-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(70, 40, 103, 0.2);
+    height: 100%;
+    width: 120%;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.proyectos-card img {
+    width: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.proyectos-card h3{
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.proyectos-card p {
+    display: none;
+    font-family: 'Cabin', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: white;
+    transition: transform 0.4s;
+}
+
+.proyectos-card:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.proyectos-card:hover p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-20px);
+}
+
+.form-contacto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.form-contacto-tittle {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.form-contacto-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.form-contacto-input {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-contacto-input input {
+    width: 500px;
+    height: 50px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    padding-left: 20px;
+    font-family: 'Cabin', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.form-contacto-input textarea {
+    width: 500px;
+    height: 200px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    padding-left: 20px;
+    font-family: 'Cabin', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+}
+
+.form-contacto-input button {
+    width: 180px;
+    height: 40px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: #E514B2;
+    color: white;
+    font-family: 'Cabin', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.form-contacto-input button:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.contacto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.contacto-tittle {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.contacto-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.contacto-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(70, 40, 103, 0.2);
+    height: 100%;
+    width: 120%;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    margin: 20px;
+    padding: 20px;
+}
+
+.contacto-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    object-position: center;
+    margin-right: 30px;
+}
+
+.contacto-card h3{
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+.footer-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: white;
+    font-family: 'Cabin', sans-serif;
+    font-weight: normal;
+    font-size: 18px;
+    transition: transform 0.4s;
+}
+
+.footer-nav a:hover {
+    transform: translateY(-5px);
+}
