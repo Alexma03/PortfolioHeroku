@@ -8,15 +8,16 @@ import com.alexma.portfolio.inicio.InicioRepository;
 import com.alexma.portfolio.project.ProjectRepository;
 import com.alexma.portfolio.skillsecondary.SkillCardSecondarRepository;
 import com.alexma.portfolio.skillsmain.SkillCardMainRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @SpringBootApplication
+@Controller
 public class PortfolioApplication {
     private final InicioRepository InicioRepository;
     private final AboutMeRepository AboutMeRepository;
@@ -45,7 +46,7 @@ public class PortfolioApplication {
         modelo.addAttribute("skillsecondary", SkillCardSecondarRepository.findAll());
         modelo.addAttribute("contact", ContactRepository.findAll());
         modelo.addAttribute("project", ProjectRepository.findAll());
-        return "index";
+        return "/index";
     }
 
     @PostMapping("/saveUser")

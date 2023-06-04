@@ -9,9 +9,9 @@ En mi tiempo libre, disfruto de la lectura, la ciencia y los videojuegos. Voy al
 insert into contact_card
 values (1, '/images/iconos/gmail.png', 'alex03marcos@gmail.com');
 insert into contact_card
-values (2, '/images/iconos/linkedin.png', 'Alexma03');
+values (2, '/images/iconos/github.png', 'Alexma03');
 insert into contact_card
-values (3, '/images/iconos/gmail.png', 'alejandromarcosgar');
+values (3, '/images/iconos/linkedin.png', 'alejandromarcosgar');
 
 insert into inicio
 values (1, 'SEE PORTFOLIO', 'CONTACT ME', 'A Full Stack Developer', '/images/FotoInicio.png',
