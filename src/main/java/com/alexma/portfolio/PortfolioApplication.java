@@ -46,7 +46,7 @@ public class PortfolioApplication {
         modelo.addAttribute("skillsecondary", SkillCardSecondarRepository.findAll());
         modelo.addAttribute("contact", ContactRepository.findAll());
         modelo.addAttribute("project", ProjectRepository.findAll());
-        return "/index";
+        return "index";
     }
 
     @PostMapping("/saveUser")
