@@ -56,7 +56,7 @@ header {
     display: flex;
     width: 90%;
     justify-content: space-between;
-    background-color: rgba(112, 123, 254, 0.4);
+    background-color: rgba(112, 136, 254, 0.2);
     padding-left: 80px;
     padding-right: 80px;
     margin-top: 30px;
@@ -299,7 +299,7 @@ main {
 .habilidades-container-secondary {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-gap: 60px;
+    grid-gap: 40px;
 }
 
 .habilidades-card {

@@ -12,6 +12,7 @@ public class ContactCard  {
     private Long id;
     public String Img;
     public String Text;
+    public String Link;
 
     public Long getId() {
         return id;
@@ -35,5 +36,13 @@ public class ContactCard  {
 
     public void setText(String text) {
         Text = text;
+    }
+
+    public String getLink() {
+        return Link;
+    }
+
+    public void setLink(String link) {
+        Link = link;
     }
 }
