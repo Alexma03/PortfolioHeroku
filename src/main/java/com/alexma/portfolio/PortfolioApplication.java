@@ -7,8 +7,9 @@ import com.alexma.portfolio.contactform.UserRepository;
 import com.alexma.portfolio.curriculum.Curriculum;
 import com.alexma.portfolio.curriculum.CurriculumRepository;
 import com.alexma.portfolio.inicio.InicioRepository;
+import com.alexma.portfolio.nav.NavigationRepository;
 import com.alexma.portfolio.project.ProjectRepository;
-import com.alexma.portfolio.skillsecondary.SkillCardSecondarRepository;
+import com.alexma.portfolio.skillsecondary.SkillCardSecondaryRepository;
 import com.alexma.portfolio.skillsmain.SkillCardMainRepository;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -30,34 +31,50 @@ public class PortfolioApplication {
     private final InicioRepository InicioRepository;
     private final AboutMeRepository AboutMeRepository;
     private final SkillCardMainRepository SkillCardMainRepository;
-    private final SkillCardSecondarRepository SkillCardSecondarRepository;
+    private final SkillCardSecondaryRepository SkillCardSecondaryRepository;
     private final ContactRepository ContactRepository;
     private final ProjectRepository ProjectRepository;
     private final UserRepository UserRepository;
     private final CurriculumRepository CurriculumRepository;
+    private final NavigationRepository NavigationRepository;
 
-    public PortfolioApplication(InicioRepository InicioRepository, AboutMeRepository AboutMeRepository, SkillCardMainRepository SkillCardMainRepository, SkillCardSecondarRepository SkillCardSecondarRepository, ContactRepository ContactRepository, ProjectRepository ProjectRepository, UserRepository UserRepository, com.alexma.portfolio.curriculum.CurriculumRepository curriculumRepository) {
+    public PortfolioApplication(InicioRepository InicioRepository, AboutMeRepository AboutMeRepository, SkillCardMainRepository SkillCardMainRepository, SkillCardSecondaryRepository SkillCardSecondaryRepository, ContactRepository ContactRepository, ProjectRepository ProjectRepository, UserRepository UserRepository, com.alexma.portfolio.curriculum.CurriculumRepository curriculumRepository, com.alexma.portfolio.nav.NavigationRepository navigationRepository) {
         this.InicioRepository = InicioRepository;
         this.AboutMeRepository = AboutMeRepository;
         this.SkillCardMainRepository = SkillCardMainRepository;
-        this.SkillCardSecondarRepository = SkillCardSecondarRepository;
+        this.SkillCardSecondaryRepository = SkillCardSecondaryRepository;
         this.ContactRepository = ContactRepository;
         this.ProjectRepository = ProjectRepository;
         this.UserRepository = UserRepository;
-        CurriculumRepository = curriculumRepository;
+        this.CurriculumRepository = curriculumRepository;
+        this.NavigationRepository = navigationRepository;
     }
 
 
     @GetMapping("/")
     public String index(Model modelo) {
-        modelo.addAttribute("inicio", InicioRepository.findAll());
-        modelo.addAttribute("aboutme", AboutMeRepository.findAll());
+        modelo.addAttribute("inicio", InicioRepository.findById(1L).get());
+        modelo.addAttribute("aboutme", AboutMeRepository.findById(1L).get());
         modelo.addAttribute("skillmain", SkillCardMainRepository.findAll());
-        modelo.addAttribute("skillsecondary", SkillCardSecondarRepository.findAll());
+        modelo.addAttribute("skillsecondary", SkillCardSecondaryRepository.findAll());
         modelo.addAttribute("contact", ContactRepository.findAll());
         modelo.addAttribute("project", ProjectRepository.findAll());
-        modelo.addAttribute("curriculum", CurriculumRepository.findAll());
-        return "index";
+        modelo.addAttribute("curriculum", CurriculumRepository.findById(1L).get());
+        modelo.addAttribute("navigation", NavigationRepository.findById(1L).get());
+        return "english";
+    }
+
+    @GetMapping("/spanish")
+    public String spanish(Model modelo) {
+        modelo.addAttribute("inicio", InicioRepository.findById(2L).get());
+        modelo.addAttribute("aboutme", AboutMeRepository.findById(2L).get());
+        modelo.addAttribute("skillmain", SkillCardMainRepository.findAll());
+        modelo.addAttribute("skillsecondary", SkillCardSecondaryRepository.findAll());
+        modelo.addAttribute("contact", ContactRepository.findAll());
+        modelo.addAttribute("project", ProjectRepository.findAll());
+        modelo.addAttribute("curriculum", CurriculumRepository.findById(2L).get());
+        modelo.addAttribute("navigation", NavigationRepository.findById(2L).get());
+        return "spanish";
     }
 
     @GetMapping("/downloadFile")

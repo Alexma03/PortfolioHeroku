@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
 
 @Entity
 public class Inicio {
@@ -16,8 +14,8 @@ public class Inicio {
     public String subtitle;
     public String title;
     public String description;
-    public String boton1;
-    public String boton2;
+    public String button1;
+    public String button2;
     public String image;
 
     public Long getId() {
@@ -52,20 +50,20 @@ public class Inicio {
         this.description = description;
     }
 
-    public String getBoton1() {
-        return boton1;
+    public String getButton1() {
+        return button1;
     }
 
-    public void setBoton1(String boton1) {
-        this.boton1 = boton1;
+    public void setButton1(String button1) {
+        this.button1 = button1;
     }
 
-    public String getBoton2() {
-        return boton2;
+    public String getButton2() {
+        return button2;
     }
 
-    public void setBoton2(String boton2) {
-        this.boton2 = boton2;
+    public void setButton2(String button2) {
+        this.button2 = button2;
     }
 
     public String getImage() {

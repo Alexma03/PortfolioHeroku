@@ -10,6 +10,7 @@ public class Curriculum {
     private String img;
     private String buttonText;
     private String buttonLink;
+    private String description;
 
     public Long getId() {
         return id;
@@ -41,5 +42,13 @@ public class Curriculum {
 
     public void setButtonLink(String buttonLink) {
         this.buttonLink = buttonLink;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

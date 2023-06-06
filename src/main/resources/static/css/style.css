@@ -9,7 +9,7 @@ body {
     margin-left: 5%;
 }
 
-.circulos {
+.circles {
     position: fixed;
     width: 100%;
     height: 100%;
@@ -19,7 +19,7 @@ body {
     filter: blur(120px);
 }
 
-.circulos .circulo {
+.circles .circle {
     position: absolute;
     width: 120%;
     height: 120%;
@@ -27,17 +27,14 @@ body {
 
 }
 
-.circulos .circulo1 {
+.circles .circle1 {
     top: -60%;
     right: -60%;
 }
 
-.circulos .circulo2 {
+.circles .circle2 {
     bottom: -55%;
     left: -55%;
-}
-
-.circulos .circulo2 .path {
 }
 
 @keyframes crecer-encoger {
@@ -78,12 +75,12 @@ header {
     color: #E514B2;
 }
 
-.header-logo {
+.header-ico {
     text-shadow: 0 10px 10px rgba(0, 0, 0, 0.58);
     transition: transform 0.4s;
 }
 
-.header-logo:hover {
+.header-ico:hover {
     transform: translateY(-5px);
 }
 
@@ -109,6 +106,20 @@ header {
     transform: translateY(-5px);
 }
 
+.nav-button{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 100px;
+    border: 2px solid #E514B2;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    color: white;
+}
 
 main {
     padding: 16px;
@@ -116,12 +127,12 @@ main {
 }
 
 
-.inicio {
+.landing {
     display: grid;
     grid-template-columns: 60% 40%;
 }
 
-.inicio-text {
+.landing-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -129,20 +140,20 @@ main {
     margin-left: 15%;
 }
 
-.inicio-text-subtitle {
+.landing-text-subtitle {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 30px;
 }
 
-.inicio-text-title {
+.landing-text-title {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 65px;
     margin-bottom: -50px;
 }
 
-.inicio-text-description {
+.landing-text-description {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 65px;
@@ -150,14 +161,14 @@ main {
     color: #E514B2;
 }
 
-.inicio-buttons {
+.landing-buttons {
     display: flex;
     flex-direction: row;
     width: 100%;
     margin-top: 50px;
 }
 
-.inicio-button {
+.landing-button {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -174,13 +185,13 @@ main {
     color: white;
 }
 
-.inicio-button:hover {
+.landing-button:hover {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     transform: scale(1.1);
     transition: 0.5s;
 }
 
-.inicio-button-border {
+.landing-button-border {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -197,18 +208,18 @@ main {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-.inicio-button-border:hover {
+.landing-button-border:hover {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     transform: scale(1.1);
     transition: 0.5s;
 }
 
-.inicio-img {
+.landing-img {
     width: 80%;
     height: 90%;
 }
 
-.inicio-img img {
+.landing-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -218,7 +229,7 @@ main {
     border: #E514B2 8px solid;
 }
 
-.sobre-mi {
+.about-me {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -226,19 +237,19 @@ main {
     margin-top: 100px;
 }
 
-.sobre-mi-tittle {
+.about-me-title {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 50px;
     margin-bottom: 10px;
 }
 
-.sobre-mi-container {
+.about-me-container {
     display: grid;
     grid-template-columns: 55% 45%;
 }
 
-.sobre-mi-img {
+.about-me-img {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -247,7 +258,7 @@ main {
     margin-right: 50px;
 }
 
-.sobre-mi-img img {
+.about-me-img img {
     width: 80%;
     height: 70%;
     object-fit: cover;
@@ -257,14 +268,14 @@ main {
     border: #E514B2 8px solid;
 }
 
-.sobre-mi-text {
+.about-me-text {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
 }
 
-.sobre-mi-text-descripcion {
+.about-me-text-description {
     font-family: 'Cabin', sans-serif;
     font-weight: normal;
     font-size: 28px;
@@ -280,7 +291,7 @@ main {
     margin-bottom: 100px;
 }
 
-.pdf-tittle {
+.pdf-title {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 50px;
@@ -345,39 +356,39 @@ main {
     margin-top: 30px;
 }
 
-.habilidades {
+.skills {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.habilidades-tittle {
+.skills-title {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 50px;
 }
 
-.habilidades-subtittle {
+.skills-subtitle {
     font-family: 'Cabin', sans-serif;
     font-weight: normal;
     font-size: 28px;
     margin: 70px;
 }
 
-.habilidades-container-main {
+.skills-container-main {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 40px;
 }
 
-.habilidades-container-secondary {
+.skills-container-secondary {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     grid-gap: 40px;
 }
 
-.habilidades-card {
+.skills-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -389,14 +400,14 @@ main {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-.habilidades-card img {
+.skills-card img {
     width: 200px;
     height: 200px;
     object-fit: cover;
     object-position: center;
 }
 
-.habilidades-card h3 {
+.skills-card h3 {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -404,17 +415,17 @@ main {
     color: white;
 }
 
-.habilidades-card p {
+.skills-card p {
     display: none;
 }
 
-.habilidades-card:hover {
+.skills-card:hover {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     transform: scale(1.1);
     transition: 0.5s;
 }
 
-.proyectos {
+.projects {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -422,13 +433,13 @@ main {
     margin-top: 100px;
 }
 
-.proyectos-tittle {
+.projects-tittle {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 50px;
 }
 
-.proyectos-container {
+.projects-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -437,7 +448,7 @@ main {
     margin-top: 50px;
 }
 
-.proyectos-card {
+.projects-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -449,13 +460,13 @@ main {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
 }
 
-.proyectos-card img {
+.projects-card img {
     width: 300px;
     object-fit: cover;
     object-position: center;
 }
 
-.proyectos-card h3 {
+.projects-card h3 {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -463,7 +474,7 @@ main {
     color: white;
 }
 
-.proyectos-card p {
+.projects-card p {
     display: none;
     font-family: 'Cabin', sans-serif;
     font-weight: normal;
@@ -473,13 +484,13 @@ main {
     transition: transform 0.4s;
 }
 
-.proyectos-card:hover {
+.projects-card:hover {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     transform: scale(1.1);
     transition: 0.5s;
 }
 
-.proyectos-card:hover p {
+.projects-card:hover p {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -488,7 +499,7 @@ main {
     margin: 15px;
 }
 
-.form-contacto {
+.form-contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -496,7 +507,7 @@ main {
     margin-top: 100px;
 }
 
-.form-contacto-tittle {
+.form-contact-title {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 50px;
@@ -510,7 +521,7 @@ main {
     margin-top: 50px;
 }
 
-.form-contacto-input {
+.form-contact-input {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -518,7 +529,7 @@ main {
     margin-bottom: 20px;
 }
 
-.form-contacto-input input {
+.form-contact-input input {
     width: 500px;
     height: 50px;
     border-radius: 20px;
@@ -530,7 +541,7 @@ main {
     font-size: 18px;
 }
 
-.form-contacto-input textarea {
+.form-contact-input textarea {
     width: 500px;
     height: 200px;
     border-radius: 20px;
@@ -542,7 +553,7 @@ main {
     font-size: 18px;
 }
 
-.form-contacto-input button {
+.form-contact-input button {
     width: 180px;
     height: 40px;
     border-radius: 20px;
@@ -556,13 +567,13 @@ main {
     cursor: pointer;
 }
 
-.form-contacto-input button:hover {
+.form-contact-input button:hover {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     transform: scale(1.1);
     transition: 0.5s;
 }
 
-.contacto {
+.contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -571,13 +582,13 @@ main {
     margin-bottom: 50px;
 }
 
-.contacto-tittle {
+.contact-title {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 25px;
 }
 
-.contacto-container {
+.contact-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -585,7 +596,7 @@ main {
     margin-bottom: 50px;
 }
 
-.contacto-card {
+.contact-card {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -599,25 +610,26 @@ main {
     padding: 20px;
 }
 
-.contacto-card:hover {
+.contact-card:hover {
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
     transform: scale(1.1);
     transition: 0.5s;
 }
 
-.contacto-card img {
+.contact-card img {
     width: 80px;
     height: 80px;
     object-fit: cover;
     object-position: center;
-    margin-right: 30px;
 }
 
-.contacto-card h3 {
+.contact-card h3 {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 20px;
     color: white;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .footer-nav {
