@@ -22,7 +22,8 @@ body {
 .circulos .circulo {
     position: absolute;
     width: 120%;
-    height: 120%;  animation: crecer-encoger 40s infinite;
+    height: 120%;
+    animation: crecer-encoger 40s infinite;
 
 }
 
@@ -232,7 +233,7 @@ main {
     margin-bottom: 10px;
 }
 
-.sobre-mi-container{
+.sobre-mi-container {
     display: grid;
     grid-template-columns: 55% 45%;
 }
@@ -270,7 +271,81 @@ main {
     margin-bottom: 20px;
 }
 
-.habilidades{
+.pdf {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.pdf-tittle {
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.pdf-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.pdf-img {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-top: 80px;
+}
+
+.pdf-img img {
+    width: 80%;
+    height: 70%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 30px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pdf-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.pdf-text-description {
+    font-family: 'Cabin', sans-serif;
+    font-weight: normal;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.pdf-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 180px;
+    background-color: #E514B2;
+    border-radius: 20px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    font-family: 'Cabin', sans-serif;
+    font-weight: bold;
+    color: white;
+    margin-top: 30px;
+}
+
+.habilidades {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -283,7 +358,7 @@ main {
     font-size: 50px;
 }
 
-.habilidades-subtittle{
+.habilidades-subtittle {
     font-family: 'Cabin', sans-serif;
     font-weight: normal;
     font-size: 28px;
@@ -321,7 +396,7 @@ main {
     object-position: center;
 }
 
-.habilidades-card h3{
+.habilidades-card h3 {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 20px;
@@ -380,11 +455,11 @@ main {
     object-position: center;
 }
 
-.proyectos-card h3{
+.proyectos-card h3 {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     color: white;
 }
 
@@ -410,6 +485,7 @@ main {
     justify-content: center;
     align-items: center;
     transform: translateY(-20px);
+    margin: 15px;
 }
 
 .form-contacto {
@@ -486,7 +562,7 @@ main {
     transition: 0.5s;
 }
 
-.contacto{
+.contacto {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -523,6 +599,12 @@ main {
     padding: 20px;
 }
 
+.contacto-card:hover {
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
 .contacto-card img {
     width: 80px;
     height: 80px;
@@ -531,14 +613,14 @@ main {
     margin-right: 30px;
 }
 
-.contacto-card h3{
+.contacto-card h3 {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 20px;
     color: white;
 }
 
-.footer-nav{
+.footer-nav {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -553,6 +635,10 @@ main {
     font-weight: normal;
     font-size: 18px;
     transition: transform 0.4s;
+}
+
+.footer-nav a span{
+    color: #E514B2;
 }
 
 .footer-nav a:hover {

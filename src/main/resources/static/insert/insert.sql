@@ -7,11 +7,13 @@ En mi tiempo libre, disfruto de la lectura, la ciencia y los videojuegos. Voy al
         '/images/Perfil.jpg');
 
 insert into contact_card
-values (1, '/images/iconos/gmail.png', 'alex03marcos@gmail.com');
+values (1, '/images/iconos/gmail.png', 'alex03marcos@gmail.com', 'mailto:alex03marcos@gmail.com?subject=Estoy interesado en contratarte');
 insert into contact_card
-values (2, '/images/iconos/github.png', 'Alexma03');
+values (2, '/images/iconos/github.png', 'Alexma03', 'https://github.com/Alexma03');
 insert into contact_card
-values (3, '/images/iconos/linkedin.png', 'alejandromarcosgar');
+values (3, '/images/iconos/linkedin.png', 'alejandromarcosgar', 'https://www.linkedin.com/in/alejandromarcosgar/');
+
+insert into curriculum values (1, '/images/CV English.png', '/pdfs/CV Alejandro.pdf', 'Download CV');
 
 insert into inicio
 values (1, 'SEE PORTFOLIO', 'CONTACT ME', 'A Full Stack Developer', '/images/FotoInicio.png',

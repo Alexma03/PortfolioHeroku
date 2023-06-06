@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Alex Marcos</title>
     <link th:href="@{/css/style.css}" rel="stylesheet">
+    <script th:src="@{/js/script.js}"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,10 +28,11 @@
         <h1><a href="#inicio" title="Alex Marcos" class="header__a">Alex <span>Marcos</span></a></h1>
     </div>
     <div class="header-nav">
-        <a href="#sobre-mi">Sobre mi</a>
-        <a href="#habilidades">Habilidades</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
+        <a href="#sobre-mi">About Me</a>
+        <a href="#pdf">Resume</a>
+        <a href="#habilidades">Skills</a>
+        <a href="#proyectos">Projects</a>
+        <a href="#contacto">Contact</a>
     </div>
 </header>
 
@@ -42,8 +44,8 @@
             <h1 class="inicio-text-title" th:text="${inicio.title}"></h1>
             <p class="inicio-text-description" th:text="${inicio.description}"></p>
             <div class="inicio-buttons">
-                <a href="#contacto" class="inicio-button" th:text="${inicio.boton1}"></a>
-                <a href="#sobre-mi" class="inicio-button-border" th:text="${inicio.boton2}"></a>
+                <a href="#sobre-mi" class="inicio-button" th:text="${inicio.boton1}"></a>
+                <a href="#contacto" class="inicio-button-border" th:text="${inicio.boton2}"></a>
             </div>
         </div>
         <div class="inicio-img">
@@ -52,7 +54,7 @@
     </section>
 
     <section class="sobre-mi" id="sobre-mi">
-        <h2 class="sobre-mi-tittle">Sobre Mi</h2>
+        <h2 class="sobre-mi-tittle">About Me</h2>
         <div class="sobre-mi-container" th:each="aboutme : ${aboutme}">
             <div class="sobre-mi-img">
                 <img th:src="${aboutme.image}" alt="Alex Marcos">
@@ -63,8 +65,22 @@
         </div>
     </section>
 
+    <section class="pdf" id="pdf">
+        <h2 class="pdf-tittle">My Resume</h2>
+        <div class="pdf-container" th:each="curriculum : ${curriculum}">
+            <div class="pdf-img">
+                <img th:src="${curriculum.img}" alt="Resume">
+            </div>
+            <div class="pdf-text">
+                <p class="pdf-text-description">You can download my resume in PDF format if you want to know more about
+                    me.</p>
+                <a th:href="@{/downloadFile(id=${curriculum.id})}" class="pdf-button">Download CV</a>
+            </div>
+        </div>
+    </section>
+
     <section class="habilidades" id="habilidades">
-        <h2 class="habilidades-tittle">Habilidades</h2>
+        <h2 class="habilidades-tittle">Skills</h2>
         <h3 class="habilidades-subtittle">Main</h3>
         <div class="habilidades-container-main">
             <div class="habilidades-card" th:each="skillMain : ${skillmain}">
@@ -73,7 +89,7 @@
                 <p th:text="${skillMain.imageDescription}"></p>
             </div>
         </div>
-            <h2 class="habilidades-subtittle">Secondary</h2>
+        <h2 class="habilidades-subtittle">Secondary</h2>
         <div class="habilidades-container-secondary">
             <div class="habilidades-card" th:each="skillsSecondary : ${skillsecondary}">
                 <img th:src="${skillsSecondary.image}" alt="Java">
@@ -84,7 +100,7 @@
     </section>
 
     <section class="proyectos" id="proyectos">
-        <h2 class="proyectos-tittle">Proyectos</h2>
+        <h2 class="proyectos-tittle">Projects</h2>
         <div class="proyectos-container">
             <div class="proyectos-card" th:each="project : ${project}">
                 <img th:src="${project.image}" th:alt="${project.title}">
@@ -95,37 +111,39 @@
     </section>
 
     <section class="form-contacto" id="contacto">
-        <h2 class="form-contacto-tittle">Formulario de contacto</h2>
+        <h2 class="form-contacto-tittle">Contact Form</h2>
         <form action="/saveUser" method="post">
             <label class="form-contacto-input">
-                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="text" name="name" placeholder="Name" required>
             </label>
             <label class="form-contacto-input">
-                <input type="email" name="email" placeholder="Correo electrónico" required>
+                <input type="email" name="email" placeholder="Email" required>
             </label>
             <label class="form-contacto-input">
-                <textarea name="message" placeholder="Mensaje" required></textarea>
+                <textarea name="message" placeholder="Message" required></textarea>
             </label>
             <label class="form-contacto-input">
-                <button class="form-contacto-btn" type="submit">Enviar</button>
+                <button class="form-contacto-btn" type="submit">Send</button>
             </label>
         </form>
     </section>
 
     <footer class="contacto">
-        <h2 class="contacto-tittle">Contactame</h2>
+        <h2 class="contacto-tittle">Contact Me</h2>
         <div class="contacto-container">
-            <div class="contacto-card" th:each="contact : ${contact}">
+            <div class="contacto-card" th:each="contact : ${contact}" th:attr="data-link=${contact.link}"
+                 onclick="redirigir(this.getAttribute('data-link'))" style="cursor:pointer;">
                 <img th:src="${contact.img}" alt="Correo">
                 <h3 th:text="${contact.text}"></h3>
             </div>
         </div>
         <div class="footer-nav">
             <a href="#inicio">Alex <span>Marcos</span></a>
-            <a href="#sobre-mi">Sobre mi</a>
-            <a href="#habilidades">Habilidades</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#contacto">Contacto</a>
+            <a href="#sobre-mi">About Me</a>
+            <a href="#pdf">Resume</a>
+            <a href="#habilidades">Skills</a>
+            <a href="#proyectos">Projects</a>
+            <a href="#contacto">Contact</a>
         </div>
     </footer>
 
