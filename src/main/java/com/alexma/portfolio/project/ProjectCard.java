@@ -13,8 +13,8 @@ public class ProjectCard {
 
     public String title;
     public String description;
+    public String descripcion;
     public String image;
-    public String imageDescription;
     public String link;
 
     public Long getId() {
@@ -41,20 +41,20 @@ public class ProjectCard {
         this.description = description;
     }
 
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     public String getImage() {
         return image;
     }
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-    public String getImageDescription() {
-        return imageDescription;
-    }
-
-    public void setImageDescription(String imageDescription) {
-        this.imageDescription = imageDescription;
     }
 
     public String getLink() {

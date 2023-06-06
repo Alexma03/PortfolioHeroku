@@ -32,11 +32,11 @@ values (3, '/images/iconos/linkedin.png', 'alejandromarcosgar', 'https://www.lin
 
 
 
-insert into curriculum (id, img, button_link, button_text, descripcion)
+insert into curriculum (id, img, button_link, button_text, description)
 values (1, '/images/CV English.png', '/pdfs/CV English.pdf', 'Download CV',
         'You can download my resume in PDF format if you want to know more about me.');
 
-insert into curriculum (id, img, button_link, button_text, descripcion)
+insert into curriculum (id, img, button_link, button_text, description)
 values (2, '/images/CV Español.png', '/pdfs/CV Español.pdf', 'Descargar CV',
         'Puedes descargar mi currículum en formato PDF si quieres saber más sobre mí.');
 
@@ -119,6 +119,6 @@ values (20, '/images/iconos/django.png', 'Django',
 
 insert into project_card (id, descripcion, description, image, link, title)
 values (1,
-        'Una red social que permite a los usuarios var todos los planes de los que pueden disfrutar en su ciudad, haciendo uso de google maps',
+        'Una red social que permite a los usuarios ver todos los planes de los que pueden disfrutar en su ciudad, haciendo uso de google maps',
         'A social network that allows users to see all the plans they can enjoy in their city, making use of google maps',
         '/images/iconos/PlanA.png', 'https://github.com/Alexma03/PlanA-V1', 'Plan A');
