@@ -2,6 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Alex Marcos</title>
     <link th:href="@{/css/style.css}" rel="stylesheet">
     <script th:src="@{/js/script.js}"></script>
@@ -74,7 +75,8 @@
             </div>
             <div class="pdf-text">
                 <p class="pdf-text-description" th:text="${curriculum.description}"></p>
-                <a th:href="@{/downloadFile(id=${curriculum.id})}" class="pdf-button" th:text="${curriculum.buttonText}"></a>
+                <a th:href="@{/downloadFile(id=${curriculum.id})}" class="pdf-button"
+                   th:text="${curriculum.buttonText}"></a>
             </div>
         </div>
     </section>
