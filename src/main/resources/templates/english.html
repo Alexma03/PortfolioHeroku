@@ -2,7 +2,8 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Alex Marcos</title>
     <link th:href="@{/css/style.css}" rel="stylesheet">
     <script th:src="@{/js/script.js}"></script>
@@ -105,9 +106,14 @@
         <h2 class="projects-tittle">Projects</h2>
         <div class="projects-container">
             <div class="projects-card" th:each="project : ${project}">
-                <img th:src="${project.image}" th:alt="${project.title}">
+                <div class="projects-card-img">
+                    <img th:src="${project.image}" th:alt="${project.title}">
+                </div>
                 <h3 th:text="${project.title}"></h3>
-                <p th:text="${project.description}"></p>
+                <div class="projects-card-text">
+                    <p th:text="${project.description}"></p>
+                </div>
+                <a th:href="${project.link}">Github</a>
             </div>
         </div>
     </section>

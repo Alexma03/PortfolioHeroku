@@ -121,4 +121,10 @@ insert into project_card (id, descripcion, description, image, link, title)
 values (1,
         'Una red social que permite a los usuarios ver todos los planes de los que pueden disfrutar en su ciudad, haciendo uso de google maps',
         'A social network that allows users to see all the plans they can enjoy in their city, making use of google maps',
-        '/images/iconos/PlanA.png', 'https://github.com/Alexma03/PlanA-V1', 'Plan A');
+        '/images/iconos/planA.png', 'https://github.com/Alexma03/PlanA-V1', 'Plan A');
+
+insert into project_card (id, descripcion, description, image, link, title)
+values (2,
+        'Mi portfolio personal desarrollado con HTML, CSS y Spring Boot',
+        'My personal portfolio developed with HTML, CSS and Spring Boot',
+        '/images/iconos/portfolio.png', 'https://github.com/Alexma03/PortfolioSpring', 'Portfolio');
