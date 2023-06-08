@@ -66,7 +66,7 @@
     </section>
 
     <section class="about-me" id="about-me">
-        <h2 class="about-me-title">About Me</h2>
+        <h2 class="about-me-title">Sobre Mi</h2>
         <div class="about-me-container">
             <div class="about-me-img">
                 <img th:src="${aboutme.image}" alt="Alex Marcos">
@@ -78,7 +78,7 @@
     </section>
 
     <section class="pdf" id="pdf">
-        <h2 class="pdf-title">My Resume</h2>
+        <h2 class="pdf-title">My Curriculum</h2>
         <div class="pdf-container">
             <div class="pdf-img">
                 <img th:src="${curriculum.img}" alt="Resume">
@@ -92,8 +92,8 @@
     </section>
 
     <section class="skills" id="skills">
-        <h2 class="skills-title">Skills</h2>
-        <h3 class="skills-subtitle">Main</h3>
+        <h2 class="skills-title">Habilidades</h2>
+        <h3 class="skills-subtitle">Principales</h3>
         <div class="skills-container-main">
             <div class="skills-card" th:each="skillMain : ${skillmain}">
                 <img th:src="${skillMain.image}" alt="Java">
@@ -101,7 +101,7 @@
                 <p th:text="${skillMain.imageDescription}"></p>
             </div>
         </div>
-        <h2 class="skills-subtitle">Secondary</h2>
+        <h2 class="skills-subtitle">Secundarias</h2>
         <div class="skills-container-secondary">
             <div class="skills-card" th:each="skillsSecondary : ${skillsecondary}">
                 <img th:src="${skillsSecondary.image}" alt="Java">
@@ -112,7 +112,7 @@
     </section>
 
     <section class="projects" id="projects">
-        <h2 class="projects-tittle">Projects</h2>
+        <h2 class="projects-tittle">Proyectos</h2>
         <div class="projects-container">
             <div class="projects-card" th:each="project : ${project}">
                 <div class="projects-card-img">
@@ -120,7 +120,7 @@
                 </div>
                 <h3 th:text="${project.title}"></h3>
                 <div class="projects-card-text">
-                    <p th:text="${project.description}"></p>
+                    <p th:text="${project.descripcion}"></p>
                 </div>
                 <a th:href="${project.link}">Github</a>
             </div>
@@ -128,7 +128,7 @@
     </section>
 
     <section class="form-contact" id="contact">
-        <h2 class="form-contact-title">Contact Form</h2>
+        <h2 class="form-contact-title">Formulario de Contacto</h2>
         <form action="/saveUser" method="post">
             <label class="form-contact-input">
                 <input type="text" name="name" placeholder="Name" required>
@@ -146,7 +146,7 @@
     </section>
 
     <footer class="contact">
-        <h2 class="contact-title">Contact Me</h2>
+        <h2 class="contact-title">Contactame</h2>
         <div class="contact-container">
             <div class="contact-card" th:each="contact : ${contact}" th:attr="data-link=${contact.link}"
                  onclick="redirigir(this.getAttribute('data-link'))" style="cursor:pointer;">
