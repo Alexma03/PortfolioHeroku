@@ -98,7 +98,8 @@ header {
     font-family: 'Cabin', sans-serif;
     font-weight: bold;
     font-size: 20px;
-    margin-left: 30px;
+    text-align: center;
+    padding: 10px;
     transition: transform 0.4s;
 }
 
@@ -111,8 +112,6 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 40px;
-    width: 100px;
     border: 2px solid #E514B2;
     border-radius: 20px;
     text-decoration: none;
@@ -800,7 +799,8 @@ main {
     .about-me-text-description {
         font-size: 22px;
     }
-    .about-me-text{
+
+    .about-me-text {
         padding-left: 30px;
         width: 90%;
     }
@@ -937,6 +937,19 @@ main {
 }
 
 @media (max-width: 900px) {
+
+    header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .header-nav {
+        width: 100%;
+        justify-content: space-around;
+    }
+
     .about-me-text-description {
         font-size: 20px;
         padding: 3% 15% 15%;
@@ -1032,6 +1045,15 @@ main {
 }
 
 @media (max-width: 550px) {
+
+    .header-nav{
+        margin-bottom: 10px;
+    }
+
+    .header-nav a {
+        font-size: 18px;
+    }
+
     .about-me-text-description {
         font-size: 18px;
     }
@@ -1067,15 +1089,15 @@ main {
         margin-bottom: 15px;
     }
 
-    .skills-container-main{
+    .skills-container-main {
         grid-gap: 20px;
     }
 
-    .skills-card{
+    .skills-card {
         width: 200px;
     }
 
-    .skills-card img{
+    .skills-card img {
         width: 100px;
         height: 100px;
     }
