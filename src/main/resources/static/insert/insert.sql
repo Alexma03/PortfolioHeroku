@@ -121,7 +121,7 @@ insert into skill_card_secondary (id, image, title, image_description)
 values (22, '/images/iconos/nodejs.png', 'Node.js',
         'Node.js es un entorno de ejecución de JavaScript de código abierto que permite a los desarrolladores crear aplicaciones web y de red escalables y de alto rendimiento.');
 insert into skill_card_secondary (id, image, title, image_description)
-values (23, '/images/iconos/c#.png', 'C#',
+values (23, '/images/iconos/csharp.png', 'C#',
         'C# es un lenguaje de programación multiparadigma de propósito general que se puede utilizar para desarrollar aplicaciones de escritorio, aplicaciones web y aplicaciones móviles.');
 insert into skill_card_secondary (id, image, title, image_description)
 values (24, '/images/iconos/c++.png', 'C++',
