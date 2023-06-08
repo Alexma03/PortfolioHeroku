@@ -1118,6 +1118,9 @@ main {
 }
 
 @media (max-width: 420px) {
+    .header-nav a {
+        font-size: 12px;
+    }
     .about-me-text-description {
         font-size: 16px;
     }
@@ -1168,5 +1171,13 @@ main {
     .skills-card img {
         width: 100px;
         height: 100px;
+    }
+
+    .contact-card{
+        width: 70%;
+    }
+
+    .contact-card h3{
+        font-size: 18px;
     }
 }
