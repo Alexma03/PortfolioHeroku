@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <title>Alex Marcos</title>
     <link th:href="@{/css/style.css}" rel="stylesheet">
     <script th:src="@{/js/script.js}"></script>
@@ -34,7 +35,7 @@
         <a href="#skills" th:text="${navigation.skills}"></a>
         <a href="#projects" th:text="${navigation.projects}"></a>
         <a href="#contact" th:text="${navigation.contact}"></a>
-        <a href="/" class="nav-button" th:text="${navigation.language}"></a>
+        <a href="spanish" class="nav-button" th:text="${navigation.language}"></a>
     </div>
 </header>
 
@@ -46,8 +47,8 @@
             <h1 class="landing-text-title" th:text="${inicio.title}"></h1>
             <p class="landing-text-description" th:text="${inicio.description}"></p>
             <div class="landing-buttons">
-                <a href="#pdf" class="landing-button">VER CURRICULUM</a>
-                <a href="#contact" class="landing-button-border">CONTACTAR</a>
+                <a href="#pdf" class="landing-button" th:text="${inicio.button1}"></a>
+                <a href="#contact" class="landing-button-border" th:text="${inicio.button2}"></a>
             </div>
         </div>
         <div class="landing-img">
@@ -56,7 +57,7 @@
     </section>
 
     <section class="about-me" id="about-me">
-        <h2 class="about-me-title">Sobre Mi</h2>
+        <h2 class="about-me-title">About Me</h2>
         <div class="about-me-container">
             <div class="about-me-img">
                 <img th:src="${aboutme.image}" alt="Alex Marcos">
@@ -68,21 +69,22 @@
     </section>
 
     <section class="pdf" id="pdf">
-        <h2 class="pdf-title">Curriculum</h2>
+        <h2 class="pdf-title">My Resume</h2>
         <div class="pdf-container">
             <div class="pdf-img">
                 <img th:src="${curriculum.img}" alt="Resume">
             </div>
             <div class="pdf-text">
                 <p class="pdf-text-description" th:text="${curriculum.description}"></p>
-                <a th:href="@{/downloadFile(id=${curriculum.id})}" class="pdf-button" th:text="${curriculum.buttonText}"></a>
+                <a th:href="@{/downloadFile(id=${curriculum.id})}" class="pdf-button"
+                   th:text="${curriculum.buttonText}"></a>
             </div>
         </div>
     </section>
 
     <section class="skills" id="skills">
-        <h2 class="skills-title">Mis Habilidades</h2>
-        <h3 class="skills-subtitle">Principales</h3>
+        <h2 class="skills-title">Skills</h2>
+        <h3 class="skills-subtitle">Main</h3>
         <div class="skills-container-main">
             <div class="skills-card" th:each="skillMain : ${skillmain}">
                 <img th:src="${skillMain.image}" alt="Java">
@@ -90,7 +92,7 @@
                 <p th:text="${skillMain.imageDescription}"></p>
             </div>
         </div>
-        <h2 class="skills-subtitle">Secundarias</h2>
+        <h2 class="skills-subtitle">Secondary</h2>
         <div class="skills-container-secondary">
             <div class="skills-card" th:each="skillsSecondary : ${skillsecondary}">
                 <img th:src="${skillsSecondary.image}" alt="Java">
@@ -101,40 +103,45 @@
     </section>
 
     <section class="projects" id="projects">
-        <h2 class="projects-tittle">Proyectos</h2>
+        <h2 class="projects-tittle">Projects</h2>
         <div class="projects-container">
             <div class="projects-card" th:each="project : ${project}">
-                <img th:src="${project.image}" th:alt="${project.title}">
+                <div class="projects-card-img">
+                    <img th:src="${project.image}" th:alt="${project.title}">
+                </div>
                 <h3 th:text="${project.title}"></h3>
-                <p th:text="${project.descripcion}"></p>
+                <div class="projects-card-text">
+                    <p th:text="${project.description}"></p>
+                </div>
+                <a th:href="${project.link}">Github</a>
             </div>
         </div>
     </section>
 
     <section class="form-contact" id="contact">
-        <h2 class="form-contact-title">Formulario de Contacto</h2>
+        <h2 class="form-contact-title">Contact Form</h2>
         <form action="/saveUser" method="post">
             <label class="form-contact-input">
-                <input type="text" name="name" placeholder="Nombre" required>
+                <input type="text" name="name" placeholder="Name" required>
             </label>
             <label class="form-contact-input">
-                <input type="email" name="email" placeholder="Correo Electrónico" required>
+                <input type="email" name="email" placeholder="Email" required>
             </label>
             <label class="form-contact-input">
-                <textarea name="message" placeholder="Mensaje" required></textarea>
+                <textarea name="message" placeholder="Message" required></textarea>
             </label>
             <label class="form-contact-input">
-                <button class="form-contact-btn" type="submit">Send</button>
+                <button class="form-contacto-btn" type="submit">Send</button>
             </label>
         </form>
     </section>
 
     <footer class="contact">
-        <h2 class="contact-title">Contactame</h2>
+        <h2 class="contact-title">Contact Me</h2>
         <div class="contact-container">
             <div class="contact-card" th:each="contact : ${contact}" th:attr="data-link=${contact.link}"
                  onclick="redirigir(this.getAttribute('data-link'))" style="cursor:pointer;">
-                <img th:src="${contact.img}" alt="Correo">
+                <img th:src="${contact.img}" alt="Email">
                 <h3 th:text="${contact.text}"></h3>
             </div>
         </div>
@@ -145,7 +152,7 @@
             <a href="#skills" th:text="${navigation.skills}"></a>
             <a href="#projects" th:text="${navigation.projects}"></a>
             <a href="#contact" th:text="${navigation.contact}"></a>
-            <a href="/" class="nav-button" th:text="${navigation.language}"></a>
+            <a href="english" class="nav-button" th:text="${navigation.language}"></a>
         </div>
     </footer>
 

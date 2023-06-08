@@ -114,6 +114,18 @@ values (19, '/images/iconos/spring.png', 'Spring Boot',
 insert into skill_card_secondary (id, image, title, image_description)
 values (20, '/images/iconos/django.png', 'Django',
         'Django es un framework de desarrollo web de código abierto, escrito en Python, que sigue el patrón de diseño Modelo-Vista-Controlador.');
+insert into skill_card_secondary (id, image, title, image_description)
+values (21, '/images/iconos/git.png', 'Git',
+        'Git es un sistema de control de versiones distribuido de código abierto y gratuito diseñado para manejar todo, desde proyectos pequeños hasta muy grandes con velocidad y eficiencia.');
+insert into skill_card_secondary (id, image, title, image_description)
+values (22, '/images/iconos/nodejs.png', 'Node.js',
+        'Node.js es un entorno de ejecución de JavaScript de código abierto que permite a los desarrolladores crear aplicaciones web y de red escalables y de alto rendimiento.');
+insert into skill_card_secondary (id, image, title, image_description)
+values (23, '/images/iconos/c#.png', 'C#',
+        'C# es un lenguaje de programación multiparadigma de propósito general que se puede utilizar para desarrollar aplicaciones de escritorio, aplicaciones web y aplicaciones móviles.');
+insert into skill_card_secondary (id, image, title, image_description)
+values (24, '/images/iconos/c++.png', 'C++',
+        'C++ es un lenguaje de programación de propósito general creado por Bjarne Stroustrup como una extensión del lenguaje de programación C, o "C con clases".');
 
 
 
