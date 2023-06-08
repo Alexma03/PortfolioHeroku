@@ -9,15 +9,15 @@ values (2, 'Sobre mí', 'Contacto', 'English', 'Proyectos', 'Currículum', 'Habi
 
 
 insert into about_me
-values (1, 'My name is Alejandro and I am a student of Cross-Platform Application Development who is passionate about technology. I enjoy creating apps for Android and web pages with the latest technologies. I consider myself a curious, self-taught and versatile person. I like to learn and grow every day. My dream is to participate in innovative projects that make a difference in the world of technology.
+values (1, 'My name is Alejandro and I am a student of Cross-Platform Application Development who is passionate about technology. I enjoy creating apps for Android and web pages with the latest technologies. I consider myself a curious, self-taught and versatile person. I like to learn and grow every day. My goal is to participate in innovative projects that make a difference in the world of technology.
 
-In my free time, I like to read, explore science and play video games. I go to the gym to stay fit and I like to keep up with everything that interests me. I am also very interested in entrepreneurship and I have some ideas that I would like to implement.',
+In my free time, I like to read, explore science and play video games. I go to the gym to stay fit and I like to keep up with everything that interests me. I have quite an entrepreneurial spirit making me resourceful, creative and persistent',
         '/images/Perfil.jpg');
 
 insert into about_me
-values (2, 'Soy Alejandro, un estudiante de Desarrollo de Aplicaciones Multiplataforma que tiene pasión por la tecnología. Me divierto creando apps para Android y páginas web con las últimas tecnologías. Me considero una persona curiosa, autodidacta y versátil. Me gusta aprender y crecer cada día. Mi sueño es participar en proyectos innovadores y que marquen la diferencia en el mundo de la tecnología.
+values (2, 'Soy Alejandro, un estudiante de Desarrollo de Aplicaciones Multiplataforma apasionado por la tecnología. Me divierto creando apps para Android y páginas web implementando las últimas tecnologías. Me considero una persona curiosa, autodidacta y versátil. Me gusta aprender y crecer cada día. Aspiro a participar en proyectos innovadores y que marquen la diferencia en el mundo de la tecnología.
 
-En mi tiempo libre, disfruto de la lectura, la ciencia y los videojuegos. Voy al gimnasio para mantenerme en forma y me gusta estar al día de todo lo que pueda. También me interesa mucho el emprendimiento y tengo algunas ideas que me gustaría llevar a cabo.',
+En mi tiempo libre, disfruto de la lectura, la ciencia y los videojuegos. Voy al gimnasio para mantenerme en forma y me gusta estar al día de todo lo que pueda. Siempre he tenido un espíritu emprendedor, lo que me hace ingenioso, creativo y persistente.',
         '/images/Perfil.jpg');
 
 
@@ -34,7 +34,7 @@ values (3, '/images/iconos/linkedin.png', 'alejandromarcosgar', 'https://www.lin
 
 insert into curriculum (id, img, button_link, button_text, description)
 values (1, '/images/CV English.png', '/pdfs/CV English.pdf', 'Download CV',
-        'You can download my resume in PDF format if you want to know more about me.');
+        'You can download my resume in a PDF format if you wish to know more about me.');
 
 insert into curriculum (id, img, button_link, button_text, description)
 values (2, '/images/CV Español.png', '/pdfs/CV Español.pdf', 'Descargar CV',
@@ -44,11 +44,11 @@ values (2, '/images/CV Español.png', '/pdfs/CV Español.pdf', 'Descargar CV',
 
 insert into inicio
 values (1, 'SEE RESUME', 'CONTACT ME', 'A Full Stack Developer', '/images/FotoInicio.png',
-        'Hello there! thanks for visiting my site', 'I''m Alejandro Marcos');
+        'Hello there, thanks for visiting my site!', 'I''m Alejandro Marcos');
 
 insert into inicio
 values (2, 'VER CURRICULUM', 'CONTACTAR', 'Desarrollador Full Stack', '/images/FotoInicio.png',
-        '¡Hola! gracias por visitar mi sitio', 'Soy Alejandro Marcos');
+        '¡Hola! gracias por visitar mi página web', 'Soy Alejandro Marcos');
 
 
 
