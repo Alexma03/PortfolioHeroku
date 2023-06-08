@@ -662,6 +662,7 @@ main {
     font-family: 'Cabin', sans-serif;
     font-weight: normal;
     font-size: 18px;
+    padding: 10px;
     transition: transform 0.4s;
 }
 
