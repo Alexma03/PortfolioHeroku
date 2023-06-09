@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.nio.file.Paths;
+import java.util.Date;
 
 @SpringBootApplication
 @Controller
@@ -93,7 +94,8 @@ public class PortfolioApplication {
 
     @PostMapping("/saveUser")
     public String addNewUser(@RequestParam String name, @RequestParam String email, @RequestParam String message) {
-        User user = new User(name, email, message);
+        Date date = new Date();
+        User user = new User(name, email, message, date);
         UserRepository.save(user);
         return "redirect:/";
     }

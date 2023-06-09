@@ -5,30 +5,24 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.Date;
+
 @Entity
 public class User {
     @Id
-    @GeneratedValue (strategy = GenerationType.AUTO)
-    private Long id;
-
+    private Date date;
     private String name;
     private String email;
     private String message;
+
     public User() {
     }
 
-    public User(String name, String email, String message) {
+    public User(String name, String email, String message, Date date) {
         this.name = name;
         this.email = email;
         this.message = message;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getId() {
-        return id;
+        this.date = date;
     }
 
     public String getName() {
@@ -53,5 +47,13 @@ public class User {
 
     public void setMessage(String message) {
         this.message = message;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 }
