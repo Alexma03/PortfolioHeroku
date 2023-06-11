@@ -2,8 +2,8 @@ package com.alexma.portfolio;
 
 import com.alexma.portfolio.aboutme.AboutMeRepository;
 import com.alexma.portfolio.contact.ContactRepository;
-import com.alexma.portfolio.contactform.User;
-import com.alexma.portfolio.contactform.UserRepository;
+import com.alexma.portfolio.contactform.model.MessageModel;
+import com.alexma.portfolio.contactform.repository.MessageRepository;
 import com.alexma.portfolio.curriculum.Curriculum;
 import com.alexma.portfolio.curriculum.CurriculumRepository;
 import com.alexma.portfolio.inicio.InicioRepository;
@@ -35,18 +35,18 @@ public class PortfolioApplication {
     private final SkillCardSecondaryRepository SkillCardSecondaryRepository;
     private final ContactRepository ContactRepository;
     private final ProjectRepository ProjectRepository;
-    private final UserRepository UserRepository;
+    private final MessageRepository MessageRepository;
     private final CurriculumRepository CurriculumRepository;
     private final NavigationRepository NavigationRepository;
 
-    public PortfolioApplication(InicioRepository InicioRepository, AboutMeRepository AboutMeRepository, SkillCardMainRepository SkillCardMainRepository, SkillCardSecondaryRepository SkillCardSecondaryRepository, ContactRepository ContactRepository, ProjectRepository ProjectRepository, UserRepository UserRepository, com.alexma.portfolio.curriculum.CurriculumRepository curriculumRepository, com.alexma.portfolio.nav.NavigationRepository navigationRepository) {
+    public PortfolioApplication(InicioRepository InicioRepository, AboutMeRepository AboutMeRepository, SkillCardMainRepository SkillCardMainRepository, SkillCardSecondaryRepository SkillCardSecondaryRepository, ContactRepository ContactRepository, ProjectRepository ProjectRepository, MessageRepository MessageRepository, com.alexma.portfolio.curriculum.CurriculumRepository curriculumRepository, com.alexma.portfolio.nav.NavigationRepository navigationRepository) {
         this.InicioRepository = InicioRepository;
         this.AboutMeRepository = AboutMeRepository;
         this.SkillCardMainRepository = SkillCardMainRepository;
         this.SkillCardSecondaryRepository = SkillCardSecondaryRepository;
         this.ContactRepository = ContactRepository;
         this.ProjectRepository = ProjectRepository;
-        this.UserRepository = UserRepository;
+        this.MessageRepository = MessageRepository;
         this.CurriculumRepository = curriculumRepository;
         this.NavigationRepository = navigationRepository;
     }
@@ -95,8 +95,8 @@ public class PortfolioApplication {
     @PostMapping("/saveUser")
     public String addNewUser(@RequestParam String name, @RequestParam String email, @RequestParam String message) {
         Date date = new Date();
-        User user = new User(name, email, message, date);
-        UserRepository.save(user);
+        MessageModel messageModel = new MessageModel(date, name, email, message);
+        MessageRepository.save(messageModel);
         return "redirect:/";
     }
 

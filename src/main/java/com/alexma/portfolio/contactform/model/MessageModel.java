@@ -1,28 +1,29 @@
-package com.alexma.portfolio.contactform;
+package com.alexma.portfolio.contactform.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.util.Date;
 
 @Entity
-public class User {
+public class MessageModel {
     @Id
     private Date date;
     private String name;
     private String email;
+    @Column(length = 20000)
     private String message;
 
-    public User() {
-    }
-
-    public User(String name, String email, String message, Date date) {
+    public MessageModel(Date date, String name, String email, String message) {
+        this.date = date;
         this.name = name;
         this.email = email;
         this.message = message;
-        this.date = date;
+    }
+
+    public MessageModel() {
+
     }
 
     public String getName() {
